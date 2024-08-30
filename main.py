@@ -2,6 +2,7 @@
 # the open-source pygame library
 # throughout this file
 import pygame
+import sys
 from constants import *
 from player import Player
 from asteroid import Asteroid
@@ -35,6 +36,10 @@ def main():
         dt = tick/1000
         for element in updatable:
             element.update(dt)
+        for element in asteroids:
+            if element.check_for_collisions(player):
+                print("Game over!")
+                sys.exit()
 
 if __name__ == "__main__":
     main()
