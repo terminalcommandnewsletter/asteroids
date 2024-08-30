@@ -45,7 +45,7 @@ def main():
                 sys.exit()
             for shot in shots:
                 if element.check_for_collisions(shot):
-                    element.kill()
+                    element.split()
                     shot.kill()
 
 if __name__ == "__main__":
