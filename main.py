@@ -43,6 +43,10 @@ def main():
             if element.check_for_collisions(player):
                 print("Game over!")
                 sys.exit()
+            for shot in shots:
+                if element.check_for_collisions(shot):
+                    element.kill()
+                    shot.kill()
 
 if __name__ == "__main__":
     main()
